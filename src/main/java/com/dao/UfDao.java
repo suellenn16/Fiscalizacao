@@ -23,7 +23,7 @@ public class UfDao {
 
 	  public Uf getBySigla(String sigla) {
 	    StringBuilder jpql = new StringBuilder();
-	    jpql.append("select fu from Uf uf ");
+	    jpql.append("select uf from Uf uf ");
 	    jpql.append("where uf.sigla = :sigla");
 
 	    TypedQuery<Uf> query = entityManager.createQuery(jpql.toString(), Uf.class);

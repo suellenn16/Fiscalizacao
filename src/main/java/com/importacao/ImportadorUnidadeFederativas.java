@@ -9,7 +9,7 @@ public class ImportadorUnidadeFederativas implements Processador {
 private FederativaUniController federativaUniController = new FederativaUniController();
 	
 	public ImportadorUnidadeFederativas() {
-		LeitorDeArquivos leitor = new LeitorDeArquivos("C:/Users/ferre/OneDrive/Documentos/eclipse-workspace/FSMA/estados.txt");
+		LeitorDeArquivos leitor = new LeitorDeArquivos("estados.txt");
 		leitor.le(this);
 	}
 	
