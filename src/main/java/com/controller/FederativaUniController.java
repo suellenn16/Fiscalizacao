@@ -5,21 +5,21 @@ import com.dao.UfDao;
 
 public class FederativaUniController {
 	
-		  UfDao ufDao = new UfDao();
+	  UfDao ufDao = new UfDao();
 
-		  public Uf create(Uf uf) {
-		    Uf existingUf = ufDao.getBySigla(uf.getSigla());
+	  public Uf create(Uf uf) {
+	    Uf existingUf = ufDao.getBySigla(uf.getSigla());
 
-		    if(existingUf == null) {
-		      ufDao.save(uf);
-		    }
+	    if(existingUf == null) {
+	      ufDao.save(uf);
+	    }
 
-		    return uf;
-		  }
+	    return uf;
+	  }
 
-		  public Uf getByName(String name) {
-		    return ufDao.getByName(name);
-		  }
+	  public Uf getByName(String name) {
+	    return ufDao.getByName(name);
+	  }
 }
 	
 	

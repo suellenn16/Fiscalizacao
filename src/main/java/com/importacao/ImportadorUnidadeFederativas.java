@@ -1,29 +1,25 @@
 package com.importacao;
 
-
 import com.classes.Uf;
-import com.controller.FederativaUniController;
+import com.dao.UfDao;
 
 public class ImportadorUnidadeFederativas implements Processador {
-	
-private FederativaUniController federativaUniController = new FederativaUniController();
-	
+
+	private UfDao ufDao = new UfDao();
+
 	public ImportadorUnidadeFederativas() {
 		LeitorDeArquivos leitor = new LeitorDeArquivos("estados.txt");
 		leitor.le(this);
 	}
-	
+
 	public void executa(String row) {
 		String[] items = row.split(",");
-		String UfNome = items[0].trim();
-		String UfSigla = items[1].trim();
+		String nome = items[0].trim();
+		String sigla = items[1].trim();
 		Uf uf = new Uf();
-		uf.setSigla(UfSigla);
-		uf.setNome(UfNome);
-		federativaUniController.create(uf);
-		
-		
+		uf.setSigla(sigla);
+		uf.setNome(nome);
+		ufDao.save(uf);
 	}
-
 
 }
